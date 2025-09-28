@@ -1,0 +1,11 @@
+1. How to create branch and switch the new branch:
+
+git checkout develop
+git pull origin develop
+git checkout -b feature/branchname --> git checkout -b feature/addReservationFunctionallity
+
+2. How to commit and push the code into the github:
+
+git add .
+git commit -m "Add footer component"
+git push origin feature/addSearchBar
