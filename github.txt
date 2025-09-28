@@ -32,3 +32,66 @@ git commit -m "Added login UI"
 Push your branch (not main):
 
 Push your branch (not main):
+
+2. 2. How to commit and push the code into the github:
+
+git add .
+git commit -m "Add footer component"
+git push origin feature/addSearchBar
+
+3. 🔥 What is a Merge Conflict?
+A merge conflict happens when Git cannot automatically combine changes from two branches because the same lines of a file were edited differently.
+
+🧩 Example Scenario
+1. You have a repo with main branch containing a file hello.txt:
+
+# Hello World
+
+2. Developer A (you) changes it in branch feature/devA:
+
+# Hello from DevA
+
+3. Developer B (simulate as another branch feature/devB) changes the same file:
+
+# Hello from DevB
+
+4. Both branches want to merge into main.
+
+💥 What Git Shows
+When Developer B tries to merge or pull main:
+
+# git merge main
+
+Git outputs:
+
+# Auto-merging hello.txt
+# CONFLICT (content): Merge conflict in hello.txt
+
+And inside hello.txt, you see:
+<<<<<<< HEAD
+Hello from DevB
+=======
+Hello from DevA
+>>>>>>> main
+
+📌 Understanding the Conflict Markers
+- <<<<<<< HEAD → your current branch’s code (DevB)
+- ======= → separator
+- >>>>>>> main → code from branch you’re merging (DevA)
+Git is asking: “Which code do you want to keep?”
+
+🛠️ How to Resolve a Merge Conflict
+1. Open the file in editor.
+2. Decide how to combine changes. Options:
+	* Keep one version: delete the other
+	* Combine both versions manually
+3. Stage the resolved file.
+4. Commit the resolution.
+5. Push changes (if this was a branch on GitHub).
+
+💡 Tips to Avoid Merge Conflicts
+1. Pull frequently: git pull origin main before starting work.
+2. Work on separate files if possible.
+3. Small, frequent commits → easier to manage.
+4. Communicate with teammates when touching the same files.
+5. Use feature branches → never work directly on main.
