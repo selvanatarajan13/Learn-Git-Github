@@ -4,8 +4,31 @@ git checkout develop
 git pull origin develop
 git checkout -b feature/branchname --> git checkout -b feature/addReservationFunctionallity
 
-2. How to commit and push the code into the github:
+🛠️ Commit & Push Workflow (Safe Way)
+
+1. Update Your Local Code Before Work
+Always start by syncing with your team’s latest code:
+
+git checkout main
+git pull origin main
+
+2. Create Your Own Branch
+Never work directly on main. Create a feature branch:
+
+git checkout -b feature/add-login
+
+3. Work & Commit Changes
+Stage and commit regularly:
 
 git add .
-git commit -m "Add footer component"
-git push origin feature/addSearchBar
+git commit -m "Added login UI"
+
+💡 Good commit message rules:
+- Start with a verb (Add, Fix, Update)
+- Be clear (Fix null bug in login API)
+- Don’t just write "changes" ❌
+
+4. Push to GitHub
+Push your branch (not main):
+
+Push your branch (not main):
